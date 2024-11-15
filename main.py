@@ -3,7 +3,7 @@
 #Allow for interaction between subclasses and randomised attributes from lists (Code exists in other folders)
 #Allow for randomised enemies to be spawned in and the character/player can interact with them
 #Allow for some form of attacking back which requires skill
-#Levels with different levels of enemies
+#Levels with different levels of enemies of different difficulty
 
 
 
@@ -11,7 +11,8 @@
 class Person(): #Person Class SuperClass of all Person Classes (Paladin, Barbarian, Conjurer, Sorcerer etc)
     def __init__(self, personName, personAge, personStartLocation, personGoldCoins, 
                  personProfession, personSpeed, personHealthPoints, personLevel): #Constructor Method
-        self.personName = personName #All Attributes Initialised
+        #All Attributes Initialised
+        self.personName = personName
         self.personAge = personAge
         self.personStartLocation = personStartLocation
         self.personGoldCoins = personGoldCoins
@@ -75,11 +76,11 @@ class Person(): #Person Class SuperClass of all Person Classes (Paladin, Barbari
         self.personHealthPoints -= healthPoints
         return f"{self.personName} lost {healthPoints} by {Attacker}"
 
-
-
-
 #Character Classes
 class Warrior(Person):
-    def __init__():
-
+    def __init__(self, personName, personAge, personStartLocation, personGoldCoins, 
+                 personProfession, personSpeed, personHealthPoints, personLevel, WarriorCombatSkill, WarriorWeapon):
+        super().__init__(personName, personAge, personStartLocation, personGoldCoins, 
+                 personProfession, personSpeed, personHealthPoints, personLevel)
+        
 #Character SubClasses
