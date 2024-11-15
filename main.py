@@ -1,16 +1,27 @@
+#Roadmap
+#First Code all classes and subclasses
+#Allow for interaction between subclasses and randomised attributes from lists (Code exists in other folders)
+#Allow for randomised enemies to be spawned in and the character/player can interact with them
+#Allow for some form of attacking back which requires skill
+#Levels with different levels of enemies
+
+
+
 #Main Classes 
-class Person():
+class Person(): #Person Class SuperClass of all Person Classes (Paladin, Barbarian, Conjurer, Sorcerer etc)
     def __init__(self, personName, personAge, personStartLocation, personGoldCoins, 
-                 personProfession, personSpeed, personHealthPoints):
-        self.personName = personName
+                 personProfession, personSpeed, personHealthPoints, personLevel): #Constructor Method
+        self.personName = personName #All Attributes Initialised
         self.personAge = personAge
         self.personStartLocation = personStartLocation
         self.personGoldCoins = personGoldCoins
         self.personProfession = personProfession
         self.personSpeed = personSpeed
         self.personHealthPoints = personHealthPoints
+        self.personLevel = personLevel
     
-    def getPersonAge(self):
+    #Getters and Setters 
+    def getPersonAge(self): 
         return self.personAge
     
     def setPersonAge(self, personAge):
@@ -45,9 +56,17 @@ class Person():
     
     def setPersonHealthPoints(self, personHealthPoints):
         self.personHealthPoints = personHealthPoints
+    
+    def getPersonLevel(self):
+        return self.personLevel
+    
+    def setPersonLevel(self, personLevel):
+        self.personLevel = personLevel
+
+    #Methods 
 
     def personTalk(dialogueLine):
-        return f"{dialogueLine}"
+        return f"{dialogueLine}" #Returns the dialogue line, will be generated later on 
 
     def personWalk(self, direction, distance):
         return f"{self.personName} walked in the {direction} for {distance} units"
@@ -57,6 +76,10 @@ class Person():
         return f"{self.personName} lost {healthPoints} by {Attacker}"
 
 
+
+
 #Character Classes
+class Warrior(Person):
+    def __init__():
 
 #Character SubClasses
