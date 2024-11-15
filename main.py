@@ -79,8 +79,38 @@ class Person(): #Person Class SuperClass of all Person Classes (Paladin, Barbari
 #Character Classes
 class Warrior(Person):
     def __init__(self, personName, personAge, personStartLocation, personGoldCoins, 
-                 personProfession, personSpeed, personHealthPoints, personLevel, WarriorCombatSkill, WarriorWeapon):
+                 personProfession, personSpeed, personLevel, 
+                 WarriorHealthPoints, WarriorCombatSkill, WarriorWeapon):
         super().__init__(personName, personAge, personStartLocation, personGoldCoins, 
-                 personProfession, personSpeed, personHealthPoints, personLevel)
+                 personProfession, personSpeed, personLevel)
+        self.WarriorHealthPoints = WarriorHealthPoints
+        self.WarriorCombatSkill = WarriorCombatSkill
+        self.WarriorWeapon = WarriorWeapon
+    
+    def getWarriorHealthPoints(self):
+        return self.WarriorHealthPoints
+    
+    def setWarriorHealthPoints(self, WarriorHealthPoints):
+        self.WarriorHealthPoints = WarriorHealthPoints
+
+    def getWarriorWeapon(self):
+        return self.WarriorWeapon
+    
+    def setWarriorWeapon(self, WarriorWeapon):
+        self.WarriorWeapon = WarriorWeapon
+    
+    def getWarriorCombatSkill(self):
+        return self.WarriorCombatSkill
+
+    def setWarriorCombatSkill(self, WarriorCombatSkill):
+        self.WarriorCombatSkill = WarriorCombatSkill
+    
+    def WarriorTalk(self, dialogueLineWarrior):
+        return f"{dialogueLineWarrior}"
+    
+    def WarriorFight(self, WarriorCombatSkill, WarriorWeapon, CurrentEnemy):
+        currentHP = self.WarriorHealthPoints
+        
+
         
 #Character SubClasses
