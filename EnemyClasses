@@ -1,0 +1,98 @@
+from FriendlyClasses.py import *
+class Monster:
+    def __init__(self, monsterName, monsterHealthPoints, monsterDialogueLine):
+        self.monsterName = monsterName
+        self.monsterHealthPoints = monsterHealthPoints
+        self.monsterDialogueLine = monsterDialogueLine
+    
+    def setMonsterName(self, monsterName):
+        self.monsterName = monsterName
+    
+    def getMonsterName(self):
+        return self.monsterName
+        
+    def setMonsterHealthPoints(self, monsterHealthPoints):
+        self.monsterHealthPoints = monsterHealthPoints
+    
+    def getMonsterHealthPoints(self):
+        return self.monsterHealthPoints
+    
+    def setMonsterDialogueLine(self, monsterDialogueLine):
+        self.monsterDialogueLine = monsterDialogueLine
+    
+    def getMonsterDialogueLine(self): #Speak function as well
+        return self.monsterDialogueLine
+    
+
+    def take_Damage(self, damage):
+        if self.monsterHealthPoints > 0:
+            self.monsterHealthPoints -= damage
+            return f"the monsters health points are now {self.monsterHealthPoints}"
+            
+        else:
+            return f"{self.monsterName} has reached 0 health points"
+            
+            
+            
+class Friend(Monster): #SubClass of Monster
+    def __init__(self, monsterName, monsterHealthPoints, monsterDialogueLine, highFiveDialogue, monsterGift): #constructor method
+        super().__init__(monsterName, monsterHealthPoints, monsterDialogueLine) #super constructor
+        self.highFiveDialogue = highFiveDialogue #initalises highFiveDialogue
+        self.monsterGift = monsterGift # Same as Line 39 but monsterGift
+        
+        #getters and setters
+        
+    def getHighFive(self):
+        return self.highFiveDialogue
+    
+    def setHighFive(self, high5):
+        self.highFiveDialogue = high5
+        
+    def getMonsterGift(self):
+        return self.monsterGift
+    
+    def setMonsterGift(self, gift):
+        self.monsterGift = gift
+    
+    #highFive function
+    def highFive(self):
+        print(f"{self.name} says {self.highFiveDialogue}!")
+        return f"You have received a Gift from {self.name}"
+        
+        
+
+
+class Enemy(Monster):
+    def __init__(self, monsterName, monsterHealthPoints, dialogueLine, enemyDamage, enemyWeakness):
+        super().__init__(monsterName, monsterHealthPoints, dialogueLine)
+        self.enemyDamage = enemyDamage
+        self.enemyWeakness = enemyWeakness
+    
+    def getDamage(self):
+        return self.enemyDamage
+    
+    def setDamage(self, enemyDamage):
+        self.enemyDamage = enemyDamage
+        
+    def getWeakness(self):
+        return self.weakness
+    
+    def setWeakness(self, enemyWeakness):
+        self.enemyWeakness = enemyWeakness
+        
+    
+    
+class HostileEnemy(Enemy):
+    def __init__(self, monsterName, monsterHealthPoints, enemyDamage):
+        super().__init__(monsterName, monsterHealthPoints)
+        
+    def enemyFight(self, enemyWeakness):
+        print(f"{self.dialogueLine}")
+        if weapon.lower() == enemyWeakness.lower():
+            print("Enemy Defeated!")
+            print( f"Player Wins!")
+            return True
+        
+        else:
+            print(f"Player Loses!")
+            return False
