@@ -1,4 +1,4 @@
-from EnemyClasses import *
+from EnemyClasses import * #Import Enemy Classes (due to fighting method)
 #Main Classes 
 class Person(): #Person Class SuperClass of all Person Classes (Paladin, Barbarian, Conjurer, Sorcerer etc)
     def __init__(self, personName, personAge, personStartLocation, personGoldCoins, 

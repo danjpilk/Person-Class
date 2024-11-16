@@ -1,9 +1,11 @@
 from FriendlyClasses.py import *
-class Monster:
+class Monster: #Monster SUPERCLASS 
     def __init__(self, monsterName, monsterHealthPoints, monsterDialogueLine):
         self.monsterName = monsterName
         self.monsterHealthPoints = monsterHealthPoints
         self.monsterDialogueLine = monsterDialogueLine
+    
+    #getters and setters
     
     def setMonsterName(self, monsterName):
         self.monsterName = monsterName
@@ -23,7 +25,8 @@ class Monster:
     def getMonsterDialogueLine(self): #Speak function as well
         return self.monsterDialogueLine
     
-
+    #Methods
+    
     def take_Damage(self, damage):
         if self.monsterHealthPoints > 0:
             self.monsterHealthPoints -= damage
@@ -40,7 +43,7 @@ class Friend(Monster): #SubClass of Monster
         self.highFiveDialogue = highFiveDialogue #initalises highFiveDialogue
         self.monsterGift = monsterGift # Same as Line 39 but monsterGift
         
-        #getters and setters
+    #getters and setters
         
     def getHighFive(self):
         return self.highFiveDialogue
@@ -62,7 +65,7 @@ class Friend(Monster): #SubClass of Monster
         
 
 
-class Enemy(Monster):
+class Enemy(Monster): #Enemy Subclass 
     def __init__(self, monsterName, monsterHealthPoints, dialogueLine, enemyDamage, enemyWeakness):
         super().__init__(monsterName, monsterHealthPoints, dialogueLine)
         self.enemyDamage = enemyDamage
@@ -88,7 +91,7 @@ class HostileEnemy(Enemy):
         
     def enemyFight(self, enemyWeakness):
         print(f"{self.dialogueLine}")
-        if weapon.lower() == enemyWeakness.lower():
+        if weapon.lower() == enemyWeakness.lower(): #Technically Weapon doesnt exist but can be fixed when imported into the game, could move to main.py 
             print("Enemy Defeated!")
             print( f"Player Wins!")
             return True
