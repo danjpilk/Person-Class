@@ -57,7 +57,8 @@ class Person(): #Person Class SuperClass of all Person Classes (Paladin, Barbari
         self.personLevel = personLevel
 
     #Methods 
-
+    #These methods need to be changed
+    
     def personTalk(dialogueLine):
         return f"{dialogueLine}" #Returns the dialogue line, will be generated later on 
 
@@ -97,8 +98,12 @@ class Warrior(Person, Monster, Enemy):
     def setWarriorCombatSkill(self, WarriorCombatSkill):
         self.WarriorCombatSkill = WarriorCombatSkill
     
+    #Methods
+    
     def WarriorTalk(self, dialogueLineWarrior):
         return f"{dialogueLineWarrior}"
+    
+    #WarriorFight definitely needs work
     
     def WarriorFight(self, WarriorCombatSkill, WarriorWeapon, currentEnemy):
         currentHP = self.WarriorHealthPoints
