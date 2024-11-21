@@ -1,4 +1,3 @@
-from FriendlyClasses.py import *
 class Monster: #Monster SUPERCLASS 
     def __init__(self, monsterName, monsterHealthPoints, monsterDialogueLine):
         self.monsterName = monsterName

@@ -1,4 +1,4 @@
-from EnemyClasses import * #Import Enemy Classes (due to fighting method)
+#from EnemyClasses import * #Import Enemy Classes (due to fighting method)
 #Main Classes 
 class Person(): #Person Class SuperClass of all Person Classes (Paladin, Barbarian, Conjurer, Sorcerer etc)
     def __init__(self, personName, personAge, personStartLocation, personGoldCoins, 
@@ -70,7 +70,7 @@ class Person(): #Person Class SuperClass of all Person Classes (Paladin, Barbari
         return f"{self.personName} lost {healthPoints} by {Attacker}"
 
 #Character Classes
-class Warrior(Person, Monster, Enemy):
+#class Warrior(Person, Monster, Enemy):
     def __init__(self, personName, personAge, personStartLocation, personGoldCoins, 
                  personProfession, personSpeed, personLevel, 
                  WarriorHealthPoints, WarriorCombatSkill, WarriorWeapon, ):
